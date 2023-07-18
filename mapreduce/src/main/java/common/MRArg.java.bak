@@ -1,0 +1,31 @@
+package common;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class MRArg {
+    private Integer workerId;
+    private Integer workerType;
+    private Integer mapNum;
+    private Integer reduceNum;
+    private String jobFile;
+    private String reduceOutFile;
+    private Boolean done = false;
+
+    public MRArg(MRTask mrTask) {
+        this.workerId = mrTask.getId();
+        this.workerType = mrTask.getTaskType();
+        this.mapNum = mrTask.getMapNum();
+        this.reduceNum = mrTask.getReduceNum();
+        this.jobFile = mrTask.getFile();
+        this.reduceOutFile = mrTask.getReduceOutFile();
+    }
+
+    public static MRArg empty(Boolean done) {
+        MRArg mrArg = new MRArg();
+        mrArg.setDone(done);
+        return mrArg;
+    }
+}
