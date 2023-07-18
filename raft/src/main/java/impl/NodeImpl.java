@@ -8,6 +8,7 @@ import util.LogUtil;
 public class NodeImpl implements Node{
 
     volatile long currentTerm = 0;
+
     Consensus consensus;
 
     void init() {
