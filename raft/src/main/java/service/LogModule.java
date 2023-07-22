@@ -10,5 +10,7 @@ public interface LogModule {
 
     LogEntry getLast();
 
+    long getLastTerm();
+
     long getLastIndex();
 }
