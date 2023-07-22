@@ -1,9 +1,9 @@
 package service;
 
-import commons.entiy.AentryParam;
-import commons.entiy.AentryResult;
-import commons.entiy.RvoteParam;
-import commons.entiy.RvoteResult;
+import common.entiy.AentryParam;
+import common.entiy.AentryResult;
+import common.entiy.RvoteParam;
+import common.entiy.RvoteResult;
 
 public interface Consensus {
     RvoteResult requestVote(RvoteParam Param);

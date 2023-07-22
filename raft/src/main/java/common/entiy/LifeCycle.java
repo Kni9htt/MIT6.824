@@ -1,4 +1,4 @@
-package commons.entiy;
+package common.entiy;
 
 public interface LifeCycle {
     /**

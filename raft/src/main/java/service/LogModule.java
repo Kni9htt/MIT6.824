@@ -1,6 +1,6 @@
 package service;
 
-import commons.entiy.LogEntry;
+import common.entiy.LogEntry;
 
 public interface LogModule {
     void write(LogEntry logEntry);
@@ -9,6 +9,8 @@ public interface LogModule {
     void removeOnStartIndex(long startIndex);
 
     LogEntry getLast();
+
+    long getLastTerm();
 
     long getLastIndex();
 }
