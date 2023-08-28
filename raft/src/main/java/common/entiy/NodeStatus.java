@@ -1,4 +1,8 @@
+<<<<<<< HEAD:raft/src/main/java/common/entiy/NodeStatus.java
 package common.entiy;
+=======
+package commons.entiy;
+>>>>>>> 2ce3f661f751c2e08c8130ea1af42c0a00f8f04f:raft/src/main/java/commons/entiy/NodeStatus.java
 
 import lombok.Getter;
 

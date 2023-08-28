@@ -1,7 +1,10 @@
 package impl;
 
+<<<<<<< HEAD
 import common.entiy.*;
 import current.RaftThreadPool;
+=======
+>>>>>>> 2ce3f661f751c2e08c8130ea1af42c0a00f8f04f
 import lombok.Getter;
 import lombok.Setter;
 import service.Consensus;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
+<<<<<<< HEAD
 
 /**
  * 节点实现类
@@ -27,6 +31,21 @@ public class NodeImpl implements Node{
     /** 上一次选举时间 */
     public volatile long preElectionTime = 0;
 
+=======
+
+/**
+ * 节点实现类
+ * 用于处理节点请求
+ */
+@Getter
+@Setter
+public class NodeImpl implements Node{
+    /** 选举时间间隔基数 */
+    public volatile long electionTime = 15 * 1000;
+    /** 上一次选举时间 */
+    public volatile long preElectionTime = 0;
+
+>>>>>>> 2ce3f661f751c2e08c8130ea1af42c0a00f8f04f
     public PeerSet peerSet;
 
     public volatile int status = NodeStatus.FOLLOWER;
@@ -70,11 +89,17 @@ public class NodeImpl implements Node{
 
         @Override
         public void run() {
+<<<<<<< HEAD
             // 当前节点已经是LEADER
             if (status == NodeStatus.LEADER)
                 return;
 
             // 到达过期时间退出线程
+=======
+            if (status == NodeStatus.LEADER)
+                return;
+
+>>>>>>> 2ce3f661f751c2e08c8130ea1af42c0a00f8f04f
             long current = System.currentTimeMillis();
             electionTime = electionTime + ThreadLocalRandom.current().nextInt(50);
             if (current - preElectionTime > electionTime)
@@ -83,6 +108,7 @@ public class NodeImpl implements Node{
 
             preElectionTime = System.currentTimeMillis() + ThreadLocalRandom.current().nextInt(200) + 150;
 
+<<<<<<< HEAD
             // 周期++并投票给自己
             currentTerm += 1;
             votedFor = peerSet.getSelf().getAddr();
@@ -112,6 +138,16 @@ public class NodeImpl implements Node{
 
                     return null;
                 }));
+=======
+            currentTerm += 1;
+            votedFor = peerSet.getSelf().getAddr();
+
+            List<Peer> onterPeerList = peerSet.getPeersWithOutSelf();
+            List<Future<RvoteResult>> futureList = new ArrayList<>();
+
+            for (Peer peer : onterPeerList) {
+
+>>>>>>> 2ce3f661f751c2e08c8130ea1af42c0a00f8f04f
             }
         }
     }
