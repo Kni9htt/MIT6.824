@@ -7,7 +7,6 @@ import lombok.Setter;
 import service.Consensus;
 import service.LogModule;
 import service.Node;
-import commons.entiy.*;
 import util.LogUtil;
 import util.LongConvert;
 
@@ -111,6 +110,7 @@ public class NodeImpl implements Node{
                             .build();
 
 
+                    return null;
                 }));
             }
         }

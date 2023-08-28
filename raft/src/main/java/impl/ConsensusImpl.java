@@ -1,7 +1,6 @@
 package impl;
 
 import common.entiy.*;
-import commons.entiy.*;
 import io.netty.util.internal.StringUtil;
 import service.Consensus;
 
