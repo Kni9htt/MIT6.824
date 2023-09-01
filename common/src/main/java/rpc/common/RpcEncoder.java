@@ -7,6 +7,9 @@ import io.netty.handler.codec.MessageToByteEncoder;
 
 import java.io.IOException;
 
+/**
+ * @author knight
+ */
 public class RpcEncoder extends MessageToByteEncoder {
     private Class<?> clazz;
     private RpcSerializer rpcSerializer;
@@ -27,6 +30,7 @@ public class RpcEncoder extends MessageToByteEncoder {
 
     public static class JSONRpcSerializer implements RpcSerializer {
 
+        @Override
         public byte[] serialize(Object object) throws IOException {
             return JSON.toJSONBytes(object);
         }

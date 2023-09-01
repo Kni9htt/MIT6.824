@@ -14,6 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MIT6.824" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
